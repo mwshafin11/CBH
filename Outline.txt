@@ -1,0 +1,172 @@
+﻿Use data as a reference to your solutions…. Example:
+* Solution: implement a 5 shift pay policy (workers get paid together for 5 shifts at 5% more)
+* Impact: Data shows that the majority of NCNS is a lot more frequent after 3 successful shifts, so edging them to complete a fourth with extra incentive / forcefully will keep them tied in.
+
+
+
+
+Steps:
+
+
+* Identify patterns of NCNS from data, come up with policies to implement 
+* Interview, outreach to HCPS to get opinion on proposed solutions
+
+
+
+
+1. When comparing HCP with NCNS Rates:
+* 24.6% > 1
+* 9.95% > 3
+* 4.35% > 5
+
+
+  
+
+
+
+
+
+
+
+2. HCP and WC had similar metrics
+
+
+WC > 5
+	3266
+	32.88%
+	WC > 10
+	1710
+	17.22%
+	WC > 25
+	481
+	4.84%
+	
+
+3.   
+
+
+
+
+
+The 95th percentile number of cancellations (combined), NCNS (NO_CALL_NO_SHOW), and WC (WORKER_CANCEL) actions are as follows:
+
+
+Total cancellations (combined): 27
+NCNS actions: 6
+WC actions: 25
+This means that 95% of workers have 27 or fewer total cancellations, 6 or fewer NCNS actions, and 25 or fewer WC actions.
+
+
+
+
+
+
+NCNS are often long shifts:
+
+   * NCNS group:
+   * Average time/duration: 8.32 hours
+   * Average charge/wage: $33.23
+   * WC group:
+   * Average time/duration: 7.53 hours
+   * Average charge/wage: $31.68
+   * All shifts:
+   * Average time/duration: 7.28 hours
+   * Average charge/wage: $31.55
+   * Non-cancelled shifts:
+   * Average time/duration: 7.07 hours
+   * Average charge/wage: $31.36
+
+
+
+
+The average, 25th percentile, and 75th percentile time difference between cancelled shifts for each worker are as follows:
+   * Average time difference: 63.99 hours
+   * 25th percentile time difference: 0 hours
+   * 75th percentile time difference: 72 hours
+This means that on average, a worker cancels a shift about 64 hours after cancelling a previous shift. 25% of workers cancel a shift immediately after cancelling a previous shift, and 75% of workers cancel a shift within 72 hours after cancelling a previous shift.
+The 95th percentile time difference and the 25th, 75th, and 95th percentile shift difference between cancelled shifts for each worker are as follows:
+   * 95th percentile time difference: 264 hours
+   * 25th percentile shift difference: 2 shifts
+   * 75th percentile shift difference: 14 shifts
+   * 95th percentile shift difference: 44 shifts
+This means that 95% of workers cancel a shift within 264 hours after cancelling a previous shift. 25% of workers cancel a shift within 2 shifts after cancelling a previous shift, 75% of workers cancel a shift within 14 shifts after cancelling a previous shift, and 95% of workers cancel a shift within 44 shifts after cancelling a previous shift.
+
+
+
+
+1 hour buffer zone, if not reported, we find new worker at 50% higher rate
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+DOCUMENT_Start_Here
+   1. Metric & Milestones / Future Customer Quotes
+
+
+
+
+   * Decreasing Cancellations rates
+   * NCNS
+   * WC
+   * Improving HCF Retention
+   * Ensuring enough HCP present or Decreasing cancellation
+   * HCP has a better time engaging on the app
+
+
+
+
+
+
+   * Future Customer Quotes section
+   * HCF like matching rates, to see how much they should overbook by
+   * HCP get notification reminder, gentle nudge…not a problem if they won’t miss it since not relevant, but if they miss, they won’t mind if a potential cancellation was unintentional, for the intentional, if they mind, then that’s a good thing, we need to identify them anyways
+
+
+Q. Better communication b/w HCP and HCF?
+
+
+
+
+   2. FAQS
+
+
+   1. What is the problem?
+   1. Cancellations, HCF churn rates
+   2. Solution ~ Predictive Model + HCP Score
+ML model to predict a Worker Cancelling. 
+   2. Used to nudge HCP, decrease cancellation
+   3. Give HCF a picture, and suggest overbooking (at no cost to them, CBH co-pay depending on HCF value)
+   4. Launch emergency worker?
+   3. Why it works / (how it works)
+   1. CBH gets better data around HCP upto 24 hour before shift, and can further enhance predictive algorithm. 
+   2. HCF would rather over book, we paint this need to keep extra shifts as a natural problem with HCP system, rather than it being an inefficiency on the part of CBH, to counter any objections raised by HCF that CBH is not efficient in hiring workers or any such claim. CBH would also be ok overpaying from their end, dependant on how much value the HCF is worth, and each extra shift’s cost to CBH could be the expected cost of the HCF churning because of the cancelled shift. 
+   4. What does the HCP Side of this solution look like?
+   5. What does the HCF side of this solution look like?
+   6. Are there any ethical concerns?
+   7. How will we build the model?
+   8. What other solutions could have been covered, and why is your solution better than the others?
+   9. How much value does this add to CBH?
+   10. How will HCF be educated about this model?
+   11. What if HCF isn’t interested in posting excess shifts?
+   12. 
+
+
+
+What if users exchange their personal information via chat and then stop using chat altogether?
+Through SendBird we can search channels for the usage of specific terms. In this case, we can see how often users are exchanging personal
+info through the chat feature in order to be able to message each other outside of the platform.
+If we see a high instance of this, and think that it has negative connotations (such as increased churn due to HCFs and HCPs booking shifts
+without us as the intermediary), then we can consider blocking the ability to share phone numbers and email via chat.
+Although this “masking” component is made available through SendBird,

@@ -1,0 +1,253 @@
+﻿HCF HCP In-app Chat: WBD 
+Future Customer Quotes 
+“Now when an HCP is running late, they message me directly to let me know, which means I can be at ease and plan accordingly. Before in-app  chat, I had to call Clipboard whenever an HCP was running late, so that they could then call the HCP and then get back to me. Not only was this  process inefficient, but most of the time I couldn’t even get through to Clipboard’s Support team!” - Christopher Johnson, Staffing Coordinator at  Regent Care of League City  
+“I am able to work so much better knowing that I can speak to the facilities where I’ve booked shifts. There is much less confusion and  complication than when I had to do everything through Clipboard. Just the other day a staffing coordinator messaged me asking where I was.  She didn’t realize the supervisor had sent me to a different floor! Because of chat, we were able to clear up that misunderstanding in less than a  minute.” - Gabriella Arambide, CNA 
+“It’s great to see that HCPs and HCFs are able to solve the little, yet important, details like orientation, late arrivals, shift details directly amongst  themselves but while still using the platform. Having us serve as the obligatory middle point of contact was creating an unnecessary barrier for  HCPs and HCFs and an excessive burden on us as a Support team.” - Grace P., Clipboard Health Support 
+Internal FAQs 
+1.  
+What is the problem?  
+We are preventing easy, direct contact between HCPs and HCFs and instead forcing ourselves to be the intermediary between our two end  users at all times. This creates a negative experience for the user (lag times, unresolved issues, constant back and forth) and an unnecessary  amount of additional inbound tickets.  
+“With Clipboard sometimes I call at night and never receive a phone call back letting me know if the healthcare professional is going to show up  or not, so I think [chat] would be helpful” - Christopher Johnson, Staffing Coordinator at Regent Care of League City  
+“...It would be helpful. That way I can call them if they are running late or whatever to ask them, “are you running late?” “are you on your way”  versus me calling you and then you having to track them down…” Yvonne Carter, Salude The Art of Recovery  
+After informing Yvonne that we would enable direct contact via in-app chat she responded, “Oh, okay!” and proceeded to talk about how she  uses CBH on her desktop, ipad and phone, posting shifts on all three devices.  
+“Chat would absolutely be helpful. Sometimes we can’t always get in contact with you when we need to or it may not be helpful to talk to you, it  may be more helpful to communicate with the facility. Without us having to go through their direct line, we can just message them, and that will  probably be a lot easier for the both of us. [I am fine with the facility contacting me] so long as it’s through the app.” - Kameryne Singleton, CNA
+  
+
+  
+
+2. How are we solving the problem?  
+By creating an HCP HCF in-app chat feature.  
+HCPs will be able to message HCFs through the CBH app, via the “My Shifts” section on the basis of whether they have an “in progress” or  upcoming shift at the given facility.  
+HCFs will be able to message HCPs through the CBH desktop web, via the shift calendar on the basis of whether the given HCP has booked a  shift which is “in progress” or upcoming.  
+As of now, the HCP and HCF can only send messages to each other if the shift is “in progress” or upcoming. Once the shift has ended, the chat  function for that particular shift will be disabled. It is likely we will initially add a 30 minute buffer after the shift has ended whereby HCPs can still  message the facility. This can account for an instance where perhaps an HCP left something behind, or forgot to fill out one of the charts, etc. 
+3. Why not build features that handle each chat problem use case? 
+There will always be unforeseen circumstances that necessitate direct contact. HCPs and HCFs are already contacting each other directly; if we  enable them to have these conversations via the platform, we can better understand the core problems and how to solve them.  
+As you will see below, the effort required to build this feature via a third-party service is low cost and therefore worth pushing forth with this  initiative. This feature can serve as the buffer that helps resolve some of the problems which our product may not have a solution for at the  moment. Through these conversations we can provide a short-term solution but we also gain insights into what our users want and need. 
+4. How will we build this? 
+We will use SendBird, an integrated third-party service.  
+After researching different options, and speaking with our top two service providers (SendBird & TalkJS), Adriano, Victor and myself determined  that this is the best option for us in the long-term and short-term.  
+The beauty of SendBird is that their core business is focused on facilitating a fantastic chat service that is easy to build. 
+Here is a preview of just how many possibilities we have through their webhooks: https://sendbird.com/docs/chat/v3/platform-api/guides /webhooks?sbrc=1miVblTUHSIEC6fSrlAoxKA%3D%3D%24EoXRteLLq2G5jqd25jdAoA%3D%3D . 
+5. Why not build it ourselves?  
+To build this feature in-house it will take approximately 10-14 weeks across 2 developers  
+The key thing to think about here is not the time to build, but rather the cost of maintaining this feature over time  To build this feature via SendBird it will take approximately 2-6 weeks across 2 developers, with Phase 1 being completed after 2 weeks  and Phase 3 being completed after 6 (Phases are described towards the end of this document)  
+There be some maintenance components to take into account, but it will be only a fraction compared to if we did this in-house  Chat is not our core business and therefore not worth the necessary investment were we to build it in-house; but it is SendBird’s  core business  
+6. What is the cost of using a third-party service?  
+SendBird $1,199 - $1,799 p/m per 25K MAUs (price starts at $399 - $599 p/m per 5K MAUs)  
+SendBird comes out of YCombinator, which means we get a discount (not included in the above price) 
+Used by DoorDash, DeliveryHero, Reddit  
+7. How many MAUs can we expect to have?  
+As of 09.28, 927 HCFs posted a shift in the previous 30 days (613 posted the shifts themselves). As of the same date, 3,713 HCPs booked a  shift in the previous 30 days. Let’s assume that, for every HCF, two HCF users will opt into the chat feature (this balances out instances where  one facility may have only 1 user opt in and others may have 3 opt in). That would make a total of ~6,494 MAUs if we were to go global and if we  were to assume 100% uptake (the latter being highly unlikely, at least in the short-to-medium term). We will likely have somewhere between 50- 70% uptake which puts us at ~3,247-4546 MAUs once we go global.  
+On SendBird, an MAU is any user who connects to SendBird at least once per month (testers included)  
+8, Do HCPs and HCFs want to communicate with each other?  
+According to user research, yes, they do want to communicate with each other, and in fact many users already do speak with each via their  personal contact info. We conducted 10 user interviews, held with a mix of HCFs and HCPs, and the resounding sentiment across all of these is  that this feature would be valuable. In 80% of the interviews, the user mentioned - unprompted - how this would mean they didn’t have to reach  out to Support for questions and messages related to booked shifts. They found it much more effective to be able to speak with each other  directly and were excited by the prospect of this.  
+HCPs also mentioned how they would much rather have contact held from within the app versus having to be bombarded with messages or calls  on their mobile. HCFs were excited when we mentioned the direct contact would be handled through in-app chat.  
+9. What kinds of questions or messages shouldn’t require Support intervention?  
+“Is the HCP coming to the shift?” 
+“The HCP hasn’t come back from their break - where have they gone?” 
+“Please tell the HCF I am arriving 15 minutes late.” 
+“I can’t find the orientation room, are you sure it’s on Floor 2?” 
+“Who did the HCP measure the patient’s vital signs with?”  
+10. What is the metric that you most want to move?  
+1.  
+Reduce inbound touches (support, docs, CSM, etc) per verified shift by 75% 2.  
+Reduce HCP and HCF churn  
+a.  
+HCP rolling 30-day headcount churn reduced to 15% or lower b.  
+HCF rolling 30-day logo churn is cut in half vs. Q3 average
+11. Is this the best customer experience you can think of, unconstrained? If not, why not? What constraints (internal, external) prevent  you from your best customer  
+experience idea? 
+No. The best customer experience would make in-app chat a mobile-first experience for the HCF, much the same way it has been done for the  HCP. We would either have an HCF app or a mobile-friendly HCF web experience.  
+We know we have to eventually give attention to the HCF mobile experience - it’s something we will likely prioritize in Q1 2022. But that should  not prevent us from moving forward with this initiative. During user interviews, 90% of HCFs said they wished CBH were more mobile-friendly;  however, they also indicated that they use this feature even if it were desktop-only. So, we can provide incremental value to the user and build  upon our learnings from these hypothesis validations when determining our next steps.  
+An ideal scenario would be one in which there was no need for the HCFs and HCPs to communicate. That is to say, the HCP would never be  running late, and the HCF wouldn’t have to chase the HCP for any additional information or vice versa. We should constantly look to improve this  through parallel efforts (e.g. policy, HCF profile page), but we also cannot deny that there are and will be instances in which HCPs and HCFs  need to communicate with each other; we shouldn’t place ourselves in the middle of that, especially when doing so only worsens the user  experience.  
+12. Will HCFs be forced to use this on desktop only?  
+We can set up our in-app chat service such that HCP messages get sent via email (these can be grouped on a per HCP basis), and the HCF can  reply to the HCP by replying to the notification email. HCFs would be able to access in-app chat through their mobile email provider. This should  increase overall engagement with the feature. You can see a demo of what this would look like below.  
+email-gw demo v2.mov 
+This feature would benefit our HCF staff who spend a lot of their time on the floor. If we can give staff the ability to receive and reply to messages  while on the go, we can make this feature all the more valuable (e.g. the HCF won’t miss a message from the HCP indicating they cannot locate  the entrance). 
+13. Premortem: What is the most likely cause of failure if this fails?  
+Either lack of use or unfavorable misuse of the feature - HCPs chasing HCFs for payments, HCF or HCPs feeling they are being bombarded with  messages, harassment (more on this later).  
+14. Any security, regulatory, or privacy implications? 
+As agreed upon with Brett McDonald, we will not ask for consent before enabling the chat function. Seeing as this is not a legal requirement; we  will simply present it as a new feature within our app. However, we will definitely cover privacy and policy measures surrounding this feature  within our Terms of Service.  
+SendBird is HIPAA/HITECH, SOC 2, ISO 27001, and compliant with GDPR (EU General Data Protection Regulation. SendBird’s privacy policy  can be found here.  
+Misconduct and the use of bad language will be controlled via SendBird’s reporting API which contains buttons within the channel menu to report  or block users. A webhook is triggered and information surrounding the blocked/reported user is sent to our endpoint. We can call a Salesforce  API to generate cases for each event of a blocked or reported user which the Marketplace Ops team can review to determine the best outcome  for the offending user.  
+We can customize the layout of the report and determine whether to give the reporter e.g. a dropdown of options and a text field to add a  description of what happened. 
+Here is a video on SendBird’s Moderation features which cover the a wide range of options for us (we can mask social security numbers being  exchanged over the chat, the use of expletives, etc.). 
+https://www.youtube.com/watch?v=GJ6yicZULTA 
+15. What kind of privacy and policy measures will the ToS cover?  
+Our ToS will inform users that the use of threatening, harassing, profane, discriminatory, abusive, inappropriate and/or sexually explicit language /content is not permitted on the platform. Spam, unwanted contact, graphic content or content that is shared repeatedly in a disruptive manner  will also be forbidden. If this is violated, we reserve the right to suspend or permanently deactivate the user’s account.  
+Our ToS should state that it is prohibited to ask HCFs about their verifications/due payments via chat; otherwise this feature will be at risk of  becoming an unwarranted shift verification Support outlet with facilities on the receiving end. We do have the option to block messages  containing specific words or phrases from being sent TBD whether we would do this with shift verification requests, but it’s good to know the  option is there. Additionally, we need to watch out for how HCFs are reaching out to HCPs if they commit a NCNS, making sure conversations do  not get out of hand.  
+We will cover the user’s rights and outline the security measures in place to protect their conversations and prohibit the sharing of their private  information.  
+16. Will there be any policy-led processes related to this feature?  
+Yes. We will have a “Trust & Safety” team (name pending) who will handle chat-related cases. The team will be composed of Marketplace Ops  members. 
+In line with the above, we will establish a review process that generates a Salesforce case any time an HCP/HCF is blocked or reported on by the  other user within the chat. The review will determine whether the offending user should be suspended.  
+We will also generally monitor chats to ensure conversations are not getting out of hand; if they are, we will fill out our own report concerning the  user in question.  
+In addition to disabling chat between two users, once one of these blocks or reports the other, we will add the offending user to the DNR list until  the review has been completed, in which case we may consider lifting the DNR.  
+17. If this feature requires some internal training, what’s an example of a training document (or even key snippet from it) so we can see  how easy/hard it will be to train internal customer-facing people to represent / answer questions about this feature? 
+The key things to train internal members on are:  
+The in-app chat policy as it relates to offending users who have been blocked or reported on. If a user contacts us to complain about  another chat user, we will instruct them on how to block/report this user via the app. We will also inform them of our policy measures  (automatic DNR & suspension review).  
+The existence of the chat feature.  
+Knowledge/Context: Make sure internal teams are aware the feature exists and that they know which MSAs it has been  launched in. If a user reaches out to us to discuss something in relation to the feature, our internal team members should have  immediate access to a page containing all the relevant information pertaining to chat. This will allow them to provide the user  with the best possible customer service. We will house this informative page within Confluence.  
+Spreading the word: If an HCP/HCF within one of the pilot launch MSAs reaches out to us requesting that we relay a message  or question to an HCF/HCP, and the message/question relates to an upcoming/in progress booked shift, we will inform them that  they can contact the user directly through our platform. In this situation, we can make use of our self-serve articles in Intercom.  
+1.  
+Account Executives and Support teams should be sure to promote this feature in their conversations with facilities and  healthcare professionals alike.  
+An example script when speaking to an HCP: 
+“Did you know that you can now contact your facility directly? All you have to do is head to “My Shifts” and click on “Contact facility” - this  will open up a chat conversation. If you are running late or if you need to double-check the start time of your orientation, simply write your  message to the facility to keep them informed. Our app will notify the staffing team as soon as you send the facility a message; you  should expect a response shortly thereafter. Once you’ve received a message from a facility, we will notify you via push notification.  Responses will be bulked, so if you receive several messages within 5 minutes, we will group these into one push notification. If you  receive a message while the app is open, you will see a red numbered icon in “My Shifts” indicating how many chats contain new unread  messages.”   
+18. Rollout plan? What if it goes badly during rollout - what mechanisms have you put in place to tell (especially if by that time you’ve  moved on to another project), and what will we do as a result? 
+We will roll this feature out incrementally, initially launching in 1 MSA to ensure that there are no major hiccups. We should launch this in an area  where there is a high level of engagement from HCFs and HCPs, such that we are confident the feature would be used. The MSA should be in  an area where there is a considerable amount of policy and support-related activity (cancellations, late payments, general Support requests).  This will give us a more accurate reflection of whether chat will be used as an additional Support function and mediate accordingly.  
+We will closely monitor this pilot MSA for a minimum of 1-2 weeks before determining an additional rollout into 4 new MSAs.  
+We will conduct several user interviews in these MSAs and train our internal teams (particularly Account Executives) to discuss this feature with  facilities and HCPs alike. 
+One of the biggest indicators that this initiative is going badly is if we have a high instance of users being blocked or reported on. We will track the  number of blocks/reports on a per user basis (on the HCF side it would be on a per HCF basis) as well as the number of users that have been  blocked or reported on. We will ensure suspension review has been completed for each of these instances and flag users who have been blocked /reported more than 4 times all-time. If we >6% of users are blocked/reported on, we need to re-evaluate the feature.  
+We will tag any incoming support requests that pertain to chat (we can have sub-tags such as “policy”, “feature onboarding”) to understand  whether the feature is creating an excess number of tickets.Rather than putting a precise number on bugs generated, we will commit to closely  monitoring the outcomes of this feature release and weighing the value-adding benefits against any issues that point to this feature causing other  parts of the site to break. 
+It is hard to put an estimate on engagement since an excessive number of messages/enabled chats could mean that HCPs are consistently late  to shifts or the information displayed on the app (e.g. check-in instructions, HCP information) is not clear/readily accessible. It will be best to  closely monitor the conversations to get a sense of the content distribution and whether the chat is being used in an effective manner.  
+If, after 2 weeks, we receive positive feedback on both the HCP and HCF side, observe that the chat is improving the user experience, see  minimal counts of reports/blocked users and can confidently say that the chat feature is not negatively impacting on net revenue, we will roll out  into an additional 5 MSAs. Based on the results of that second rollout phase, if, after two weeks, things continue in a neutral (although ideally)  positive direction, we will launch globally.  
+There may be early indicators that we need to rethink how we approach our chat feature. Perhaps we need to use chat to steer users in the “right  direction” or add prompts that allow them to complete their intended actions with more ease. The upside is that we have a lot of flexibility at our  disposal thanks to SendBird. It’s just a matter of prioritizing our feature requests and investing the time to build them out.  
+The work will be released under a feature flag which means we can turn it off at any moment. We should aim to go from initial launch to global in  minimum 1, maximum 1.5 month’s time.  
+19. What is the plan for training external customers?  
+Outbound email, text, in-app messaging, push notifications 
+Include educational video  
+Provide a link to our guidelines on what is and is not allowed when using this chat feature  
+It will be very important for users to know what is expected of them as well as what safety measures they have at their  disposal, should they feel threatened at any point in their message exchange  
+By Phase 2 of release, introduce the option to tweak notification preferences 
+We would likely do more than one round of messaging  
+Account Executive promoting the feature  
+Support educating users throughout their exchanges 
+Intercom articles explaining how the feature works  
+Considering having a popup after booking shifts; if user does not use the chat function after working 5 shifts, show the popup again  We could also display a temporary tooltip in “My Shifts” to call out the feature; when the user clicks “Got it!” the tooltip closes  and if they don’t use it after working 5 shifts we remind them once again 
+Prominently display chat function on the shift card on the HCP side; have a “Messages” tab on the HCF side (in between “Shift  Calendar” and “Dashboard”)  
+Notify HCFs of a new message via email (this can also be done via SMS) 
+Potentially notify HCPs of a new message via SMS  
+Conduct user interviews in each of our MSAs to understand uptake or lack of uptake and use these learnings towards additional training  mechanisms  
+20. What are some of the risks associated with this feature and how are we responding to these?  
+One of the bigger risks we have with chat is exposing facilities to HCP discontent when/if a shift is not verified in a timely manner. We have  already heard reports from facilities indicating that HCPs are contacting them directly, at times heckling them about their payments. Delays in  payments are sometimes due to lack of response to facilities and other times due to flaws in our existing process.  
+The primary way to tackle this issue is to improve our shift verification times. We have a goal this quarter to reduce inbound touches per verified  shift by 75%. More specifically, we have Will Campbell working to get our process/turnaround times in a much better state. On top of that, we  have Ryan Hollander working on our 100% InstantPay initiative which will play a substantial part in getting HCPs paid in a timely manner.  
+Beyond these “external” factors we have certain mechanisms which we can put into place via our chat feature:  
+Use a word filter to detect and block messages containing keywords and phrases related to shift verification (as well as other items) Not only would we prevent the message from being sent to the facility (this assumes the HCP is asking about a payment), we  can also direct the user to the right place (an Intercom article, our customer-facing Intercom chat, an email address, etc.)  Close the messaging channel as soon as the shift ends
+Therefore, the HCP and HCF can only communicate with each other from the moment the shift is booked up until the moment  the shift.end time has passed  
+This doesn’t of course prevent the HCP from booking another shift with the HCF and asking about their payment in this new  channel, so we should keep that in mind  
+We know that there is risk of general misuse of the feature (i.e. inappropriate conduct). Given our ToS, guidelines and policy-driven process  described earlier, we will be able to have a good grip on this. Any misconduct that merits suspension is likely a clear indicator of a bad actor that  had already done their fair share of damage. We can treat this as another viewpoint for identifying which users should not be on the platform.  
+We also have the ability, as admins, to enter any channel and serve as a mediator or Support representative. This could potentially have a use  case down the line.  
+21. Could this feature be used to gain insights/facilitate future product work?  
+Yes. We will spend a significant amount of time reading through HCP HCF chats so that we can get a better understanding of the users’ needs. 
+It is likely that the chat feature will be used in unintended ways, and in some instances this will foster new ideas or additional validation for future  work.  
+One thing we can expect is for HCFs to “lock in” additional shifts with their booked HCP, by asking them (via chat) about their availability for  specific dates and times. HCFs are already calling Support to make these requests, so it’s rather inevitable that they will do the same in chat.  Rather than blocking this behavior, we can use it to further develop our thinking around possibly enabling pre-agreed upon shifts.  
+Using the above exchange as a use case, we could (in a made up future) implement a “Post shift” CTA within chat based on when a particular  phrase is used (e.g. “Are you free to work next Tuesday”). Clicking this CTA would post the shift on the calendar, but give the HCP first dibs on  shift (since they are already speaking to the facility via chat). Furthermore, the shift would be fairly priced by our algorithm than if it were  happening offline and then added post hoc. We therefore incentivize the HCPs and HCFs to want to handle this exchange on the app (for the  former it’s fair pricing, for the latter it’s ease of action).  
+22. How would we release this work?  
+Iteratively. Proposed timeline (subject to changes):  
+Phase 1: Basic chat between HCP and HCF (2 weeks)  
+Push Notifications on the HCP side (default setting)  
+Email notifications on the HCF side (default setting) (no reply-by-email function if the implementation is holding us back from releasing)  Messages happen on the shift level so as soon as a shift is not in “My Shifts”, the chat cannot be used by either party  Report abuse/block user functionality  
+Initially this would generate a third-party provider weblink to access user information  
+Phase 2: Customized chat (2 weeks)  
+Allow HCFs and HCPs to select their notification preferences  
+Include reply-by-email functionality if not implemented in Phase 1  
+Custom analytics piped into Metabase (prior to that we would use the service provider analytics dashboard)  
+Keyword filter to block out profanity and possibly verification-related content 
+Send an email transcript of the chat once the shift has ended 
+Phase 3: Additional improvements (2 weeks)  
+Call Salesforce API to generate cases based on reports/blocked users 
+Allow users to access messenger on the shift level, but house the full list of message exchanges in a separate page/section of the app /web  
+Messages would be organized based on the chronology of when the shifts were worked, separated in Month + Week cohorts  We would need to determine when to archive the chats  
+Trigger articles/helpful information based on the chat content (TBD)  
+Implement some type of feedback form to determine if the chat was helpful (TBD)  
+23. When will we start?  
+The optimistic development start date is Thursday, October 7th, at the start of Sprint 6, realistic is Thursday, October 14th and  pessimistic is Thursday, October 21st  
+From the point of commencement we expect 2 weeks until Phase 1 of the feature is delivered to our users 
+Customer FAQs  
+1. Will I be charged to use this feature?  
+No, it’s totally free. 
+2. How does it work?  
+HCP 
+Say you need to inform the facility that you are arriving 10 minutes late, or you are having trouble finding the entrance, open the app > head to  “My Shifts” > click “Message the facility” > write out your message > click “Send” and then wait until the facility gets back to you.  
+If your app is open, you will see a red icon in “My Shifts” indicating a new message. If the app is closed or in the background, you will receive a  push notification to your phone with a snippet of the facility’s message response.  
+Once a shift has ended*, the chat for that particular shift will be disabled.  
+*We will likely add a 30 minute buffer after the shift has ended.  
+HCFs 
+Say you need to inform the healthcare professional the orientation has been cut down to 30 minutes (from 60), or you want to ask them if they  are on their way, log onto the platform > head to the shift calendar > click on the shift you want to message about type, (day, AM/PM/NOC) >  click “Message worker” > write out your message > click “Send” and then wait until the healthcare professional gets back to you.  
+You will see a red icon in the new “Messages” tab, which indicates you have a new message. You will also receive a desktop notification as well  as an email notification. If you wish to receive SMs notifications, these can be enabled in the “Users” section of your facility login page. 
+Once a shift has ended, the chat for that particular shift will be disabled.  
+3. How should I use this feature?  
+Head to our In-App Chat Policy & Guidelines page for recommendations on how to use this feature as well as information on what is considered  misuse of the feature and how we are keeping you and your information safe.  
+4. Who can use this feature?  
+All partner healthcare professionals and facilities have access to this feature.  
+5. What if someone mistreats me over chat?  
+We have enabled a reporting feature that is located within all of your channels so that if you encounter inappropriate or threatening behavior from  one of our partner facilities/healthcare professionals, you can immediately file a report and additionally block the user if needed. We will review  these cases or reported misconduct and determine the appropriate next steps for the user.  
+6. Can I book shifts over chat? 
+No. The chat function is meant to be used to discuss matters pertaining to the shifts that have already been booked.  
+Design Mockups  
+HCP 
+View in Figma here 
+Note that this design proposed a cleaner shift card that removes the HCF address and information icon. 
+This firsmockup shows a state in which the user has multiple alerts (timesheets, messages, missing documents). We need to be careful not to  overwhelm the user with too many visual.  
+cues.
+This mockup shows three states:  
+1.  2.  3.  
+New message  
+No message sent  
+Conversation initiated but messages read  
+When the user clicks either of the three states, it opens up a channel for that specific shift. The HCP and HCF can message each other up until  the point when the shift ends.  
+The three different icon states may be overwhelming for the user, but it is doubtful it would be what determines whether the HCP sends the  message or not. We should get user feedback on the design and adjust as needed as a means of improving the messaging experience.  
+In the future, if/when we display past shifts on the HCP’s “My Shifts” page, we will retain the chat history which the user can scroll through. The  CTA copy on the shift card will be “Chat History”, and when the user clicks in, the text field to send a message will be disabled and there will be a  banner indicating that the shift is completed. Within that message we may add that the HCP should contact support for any future questions  related to the shift. 
+We can explore different ways of displaying the message CTA and have the flexibility to make it take up less space on the shift card to allow for  other items to be displayed alongside it (InstantPay, TBIO, HCF Info). 
+HCF 
+View in Figma here
+  
+
+  
+
+These mockups show what the chat feature could look like if we were to display it within the desktop view. On the facility side it makes sense to  have a dedicated “Messages” page from the start, such that, when the HCF clicks to message an HCP, it opens the channel with the “Messages”  page in an active state on the left panel.  
+Once we implement the chat-only mobile view, we can detect the HCF’s device to determine whether to open the link in desktop or mobile view.  Appendix 
+1.  
+What if users exchange their personal information via chat and then stop using chat altogether?  
+Through SendBird we can search channels for the usage of specific terms. In this case, we can see how often users are exchanging personal  info through the chat feature in order to be able to message each other outside of the platform.  
+If we see a high instance of this, and think that it has negative connotations (such as increased churn due to HCFs and HCPs booking shifts  without us as the intermediary), then we can consider blocking the ability to share phone numbers and email via chat.  
+Although this “masking” component is made available through SendBird, we should avoid having to put it in place. It gives a sense of overbearing  control. 
+What we can do is include in our guidelines and ToS that users are not to request the other person’s contact information via chat. The reason  being that not all HCPs wish to have their contact information shared with HCFs and vice versa; so we can do our part to try to ensure these  requests don’t occur.  
+If, however, we see a high occurrence of HCPs and HCFs exchanging information willfully, we can ask ourselves why that is the preferred  method. And keep in mind that SendBird has a voice and video call API should we need it down the line.  
+Thus far, the user research has indicated that having the messaging system within the platform allows for much better organization and control.  Not to mention that HCPs have also mentioned enjoying the fact that CBH can serve as the middle person in case anything does go awry  between the HCP and HCF. Through CBH they have a witness/third-party that can help mediate a given situation.  
+2. What other aspects of the feature/implementation should we keep in mind? 
+There are a lot of different features which are made possible via this chat function - some are out-of-the-box and others would need to be built by  us via webhooks.  
+1.  
+We have the ability to create a super simple chat-only UI for the HCF such that when they click a link in their email or SMS to access the  full chat history, they are directed to this mobile version -- estimated time from build to release is 1 Sprint (2 weeks)  2.  
+We can determine how many users are in any given channel (i.e. there can be more than one HCF user)  
+a.  
+From the HCF side, the plan is to assign a “Messaging” role by default to all facility.users who hold the “Shift Management” role  
+i.  
+When an HCP messages a facility, all users for that facility who have a “Shift Management” role will be added to the  channel 
+ii.  
+.  
+a.  
+ii.  
+iii.  
+Each user will receive an unread notification; only once the specific user reads the message will the message be  considered “read”  
+In the future, we can consider having more than one HCP in a channel (perhaps this could be a good feature for shift  swapping/replacements)  
+3.  
+Batched notifications  
+a.  
+The goal is to link batched notifications with “time until shift start”. If the shift is due to start in 60 minutes, then we don’t batch  notifications for the shift in question. If the shift is due to start in > 60 minutes, we batch every 15 minutes. These numbers are  approximations and not yet set in stone.  
+4.  
+In line with the above, we will have to consider notification preferences  
+a.  
+On the HCF side, if the user has email and sms notifications enabled for shift_assign we will enable only email notifications and  replies by default; if the HCF user has shift_assign notifications disabled on email and enabled on SMS, we will send them SMS  notifications instead (these will provide a link that the HCF can access via their mobile to see and reply to chats)  b.  
+HCPs will receive push notifications by default; no SMS or email notifications initially  
+i.  
+If we see limited uptake, we can implement SMS; another option is to A/B test our SMS vs no SMS approach  
+5.  
+Users can send their fixed location via chat, which could have its uses in the future  
+a.  
+This could possibly benefit users is if the HCP were to send their location to the HCF when indicating they are on their way  b.  
+We can use live location sharing but it would have to be built by us  
+i.  
+It feels worth noting that InstantPay is going to use location services to determine the HCP’s proximity to the facility  when clocking in/out and submitting a timesheet - location services can end up being a very useful tool to us across  several parts of the platform/user flow  
+6.  
+We can send forms, articles, and CTAs within the channel, all via API calls  
+a.  
+We can send a review form asking for feedback on the HCP/HCF (the results of which would be sent to us, not the user being  reviewed)  
+b.  
+We can ask for feedback on the chat function once we end the chat (e.g. “Did you find this chat helpful?”)  c.  
+We can trigger certain CTAs based on keywords or phrases or otherwise make these options available in the channel menu  
+3. Design Inspiration 
+For personal reference. 
+https://www.figma.com/file/vWprxG6xA9PYz75y8OQq6V/?node-id=46%3A1585 Add your discussion here, either as a comment or written below. 
+1.  
+Where do we integrate their SDK, is it all on the backend and we build our own custom frontend, or do they have both backend and  frontend integrations? Relatedly, is this something that can be totally decoupled from our main API? 
+https://sendbird.com/developer?sbrc=1BhQRv0OBsnGBlFVWelgROg%3D%3D%24NtS6PiRfsypTXboySsCyDg%3D%3D
